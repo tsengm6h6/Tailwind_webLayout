@@ -73,25 +73,18 @@
     </div>
   </section>
 
-  <!-- Subscribe -->
-  <section class="bg-subscribe bg-cover bg-center bg-no-repeat">
-    <div class="container max-w-5xxl px-4 pb-28 h-150 flex flex-col justify-end items-start">
-      <h4 class="text-gray text-3xl font-semibold leading-relaxed xl:leading-normal mb-5">
-        記得<br/>
-        訂閱以獲取更多資訊！
-      </h4>
-      <div class="flex">
-        <input class='w-full min-w-0 border-2 border-amber border-r-0 rounded-l pl-3 xl:pl-4 py-5 placeholder-gray' type="email" placeholder="Your email account">
-        <button class="bg-amber text-white text-base font-medium px-6 py-5 xl:px-7 rounded-r">Subscribe</button>
-      </div>
-    </div>
-  </section>
+  <Subscribe/>
 </template>
 
 <script>
 import { reactive } from '@vue/reactivity'
+import Subscribe from '../components/Subscribe.vue'
+
 export default {
   name: 'landingPage',
+  components:{
+    Subscribe
+  },
   setup(){
     const articles = reactive([
       { id:'1', title: 'Gabrielle CHANEL', description: '全新嗅覺體驗，花香四溢、明亮馥郁。結合茉莉、依蘭依蘭、橙花和最迷人的格拉斯晚香玉之花香，呈現出夢幻花香氣息。 極具女性特質的香奈兒嘉柏麗香水，專為光芒四射的她而生。' },
