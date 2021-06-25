@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- SubMenu -->
-    <SubMenu/>
+    <SubMenu />
     <!-- Login Section -->
     <main class="container w-full max-w-5xxl px-4 xl:px-0 text-black">
       <div class="mt-10 mb-28 xl:my-20 grid grid-cols-12 gap-7">
