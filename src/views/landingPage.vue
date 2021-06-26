@@ -48,7 +48,7 @@
   </section>
 
   <!-- Products -->
-  <section class="pt-8 pb-3 px-4 xl:py-10 xl:px-96 bg-gray-light">
+  <section class="pt-8 pb-3 px-4 xl:py-10 bg-gray-light">
     <div class="container max-w-5xxl grid grid-cols-12 xl:gap-x-8">
       <div v-for="product in products" :key="'product' + product.id" 
     :class="`col-start-1 col-span-12 flex flex-col mb-6 xl:col-start-${(Number(product.id)-1)*4 + 1} xl:col-span-4`">

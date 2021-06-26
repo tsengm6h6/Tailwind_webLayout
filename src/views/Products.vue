@@ -5,9 +5,13 @@
   <main class="container w-full max-w-5xxl px-4 xl:px-0 text-black">
     <ul class="grid grid-cols-12 gap-x-4 gap-y-7 xl:gap-7 pt-10  xl:pt-20 xl:pb-16">
       <li v-for="product in products" :key="'product'+product.id" class="col-span-6 xl:col-span-3">
-        <img class="w-full h-40 xl:h-64 object-cover object-center" :src="product.img" alt="商品圖">
+        <router-link to='/product/1'>
+          <img class="w-full h-40 xl:h-64 object-cover object-center" :src="product.img" alt="商品圖">
+        </router-link>
         <div class="flex flex-col">
-          <h1 class="text-xl xl:text-2xl font-semibold leading-relaxed">{{product.name}}</h1>
+          <router-link to='/product/1'>
+            <h1 class="text-xl xl:text-2xl font-semibold leading-relaxed">{{product.name}}</h1>
+          </router-link>
           <h2 class="text-base font-light">{{product.brand}}</h2>
           <p class="text-base font-light">{{product.price}}
             <del class="text-gray ml-2">{{product.originPrice}}</del>
