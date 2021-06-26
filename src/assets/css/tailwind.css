@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='number'],
+input[type='url'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='time'],
+input[type='search'],
+input[type='tel'],
+input[type='checkbox'],
+input[type='radio'],
+select,
+select[multiple],
+textarea {
+  @apply border-loginGray-light rounded focus:outline-none focus:border-amber-light focus:ring-amber-light focus:ring-opacity-50;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  @apply focus:ring-0 focus:ring-offset-0 text-amber-dark;
+}

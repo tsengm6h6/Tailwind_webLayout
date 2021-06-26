@@ -23,6 +23,14 @@ module.exports = {
       'large': '12px',
       '3xl' : '30px'
     },
+    minWidth: {
+      '0': '0',
+      '16': '4rem',
+      '1/4': '25%',
+      '1/2': '50%',
+      '3/4': '75%',
+      'full': '100%',
+    },
     extend: {
       colors: {
         amber: {
@@ -61,7 +69,7 @@ module.exports = {
         center: true // 預設 container 與 maxWidth 來做寬度限定
       },
       flex: {
-        'half': '1 1 50%' // flex basic 只有 0% 和 auto，其他要自訂
+        'half': '1 1 50%', // flex basic 只有 0% 和 auto，其他要自訂
       },
       backgroundImage: theme => ({
         'hero': "url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/perfume-week6/index1.jpg')",
@@ -70,7 +78,10 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }
