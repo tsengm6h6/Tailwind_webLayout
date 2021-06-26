@@ -8,9 +8,21 @@
       <p class="text-sm font-medium">© 2020. All Rights Reserved.</p>
       </div>
       <ul class="hidden xl:flex xl:items-center space-x-10">
-        <li class="text-xl font-normal">Product</li>
-        <li class="text-xl font-normal">Blog</li>
-        <li class="text-xl font-normal">Contact</li>
+        <li class="text-xl font-normal">
+          <router-link to='/products'>
+            Product
+          </router-link>
+        </li>
+        <li class="text-xl font-normal">
+          <router-link to='/'>
+            Blog
+          </router-link>
+        </li>
+        <li class="text-xl font-normal">
+          <router-link to='/'>
+            Contact
+          </router-link>
+        </li>
       </ul>
     </div>
   </footer>

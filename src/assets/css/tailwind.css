@@ -26,3 +26,7 @@ input[type='checkbox'],
 input[type='radio'] {
   @apply focus:ring-0 focus:ring-offset-0 text-amber-dark;
 }
+
+#subscribe {
+  @apply border-amber
+}

@@ -23,12 +23,12 @@
           <select name="quantity" id="quantity" class='w-40 min-w-0 border-2 border-amber border-r-0 rounded-l pl-3  py-5 xl:pl-4 xl:py-4 placeholder-gray'>
             <option v-for='num in 10' :key="num" value="num" class="">{{num}}</option>
           </select>
-          <button class="bg-amber text-white text-base font-medium w-48 px-6 py-5 xl:px-10 xl:py-4 rounded-r">加入購物車</button>
+          <button class="bg-amber text-white text-base font-medium w-48 px-6 py-5 xl:px-10 xl:py-4 rounded-r" @click="toggleLightBox('已加入購物車')">加入購物車</button>
         </div>
-        <div class="flex text-base mt-2 mb-10 xl:mb-20">
+        <button class="flex text-base mt-2 mb-10 cursor-pointer focus:outline-none xl:mb-20" @click="toggleLightBox('已加入我的收藏')">
           <span class="material-icons text-amber">favorite</span>
-          <p class="">加入我的收藏</p>
-        </div>
+          <p>加入我的收藏</p>
+        </button>
         <section class="text-base mb-5">
           <h2 class="font-medium mb-2">商品購買須知</h2>
           <p class="font-light">產品因拍攝關係顏色可能略有差異，實際以廠商出貨為主。 商品情境照為示意用，僅商品主體不包含其他配件，請以規格內容物為主。 D’Perfume 盡可能確保所列商品備貨充足，但偶爾仍會有產品售罄的情況。如您所訂購的商品庫存不足，我們將盡快以電子郵件通知您。任何訂單變動均會在訂單總額與出貨訊息內更新。</p>
@@ -46,10 +46,18 @@
       </div>
      </div>
   </main>
+
+  <!-- Box -->
+  <div v-if="lightBox.open === true" @click="toggleLightBox('')" class="sticky inset-0 w-full min-h-screen flex justify-center items-center bg-gray bg-opacity-90">
+    <p class="py-4 px-6 xl:px-52 bg-white text-amber-dark rounded cursor-pointer">
+      {{lightBox.title}}
+    </p>
+  </div>
   </div>
 </template>
 
 <script>
+import { reactive } from 'vue'
 import SubMenu from '../components/SubMenu.vue'
 
 export default {
@@ -57,5 +65,19 @@ export default {
   components: {
     SubMenu
   },
+  setup(){
+    const lightBox = reactive({
+      title: '',
+      open: false
+    })
+    const toggleLightBox = ((title) =>{
+      lightBox.title = title,
+      lightBox.open = !lightBox.open
+    })
+    return {
+      lightBox,
+      toggleLightBox
+    }
+  }
 }
 </script>

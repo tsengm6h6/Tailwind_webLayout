@@ -5,7 +5,9 @@
       <div class="col-start-8 col-end-13 self-center">
         <h2 class="text-3xl leading-loose font-bold">Perfume your day</h2>
         <p class="text-base max-w-xl">A perfume is like a piece of clothing, a message, a way of presenting oneself a costume that according to the person who wears it.</p>
-        <button class="mt-4 py-3 text-center w-full border border-white rounded-3xl font-medium max-w-xs">Shop now</button>
+        <button class="mt-4 py-3 text-center w-full border border-white rounded-3xl font-medium max-w-xs focus:outline-none bg-transparent hover:bg-white hover:text-amber transition duration-300 ease-in-out">
+          <router-link to='products'>Shop now</router-link>
+        </button>
       </div>
     </div>
   </header>
@@ -21,7 +23,7 @@
       <article class="pt-4 pb-8 xl:flex-half xl:h-138 xl:flex xl:flex-col xl:justify-center xl:items-start xl:px-28">
         <h1 class="font-bold leading-relaxed text-3xl">{{article.title}}</h1>
         <p class="mt-2 xl:pr-9">{{article.description}}</p>
-        <a class="block mt-2 xl:mt-4 font-semibold text-amber-light text-base" href="#">查看更多</a>
+        <router-link to='/product/1' class="block mt-2 xl:mt-4 font-semibold text-amber-light text-base">查看更多</router-link>
       </article>
     </div>
   </section>
@@ -50,7 +52,9 @@
     <div class="container max-w-5xxl grid grid-cols-12 xl:gap-x-8">
       <div v-for="product in products" :key="'product' + product.id" 
     :class="`col-start-1 col-span-12 flex flex-col mb-6 xl:col-start-${(Number(product.id)-1)*4 + 1} xl:col-span-4`">
-        <img class="w-full h-full object-cover object-center" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/perfume-week6/index2.jpg" alt="">
+      <router-link to='/product/1'>
+       <img class="w-full h-full object-cover object-center" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/perfume-week6/index2.jpg" alt="">
+      </router-link>
         <h3 class="font-semibold text-2xl leading-relaxed">{{product.name}}</h3>
         <p class="font-light text-base">{{product.brand}}</p>
         <span class="font-light text-base mt-1">{{product.price}}
@@ -69,7 +73,7 @@
       <h4 class="font-bold text-3xl leading-loose">Bottle-Recycling</h4>
       <p class="font-light text-xl mb-4">Recycle your used empty bottles and be rewarded!</p>
       <p class="font-light text-base mb-4">For the past 10 years, we have collected over 800,000 bottles through Empty Bottle Recycling Campaign and planted more than 860 pine trees for a better environment.For the past 10 years, we have collected over 800,000 bottles through Empty Bottle Recycling Campaign and planted more than 860 pine trees for a better environment.</p>
-      <a href="#" class="text-amber-light font-semibold text-base">查看更多</a>
+      <router-link to="/product/1" class="text-amber-light font-semibold text-base">查看更多</router-link>
     </div>
   </section>
 

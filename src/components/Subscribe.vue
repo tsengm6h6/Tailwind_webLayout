@@ -7,8 +7,8 @@
         訂閱以獲取更多資訊！
       </h4>
       <div class="flex">
-        <input class='w-full min-w-0 border-2 border-amber border-r-0 rounded-l pl-3 xl:pl-4 py-5 placeholder-gray' type="email" placeholder="Your email account">
-        <button class="bg-amber text-white text-base font-medium px-6 py-5 xl:px-7 rounded-r">Subscribe</button>
+        <input id='subscribe' class='w-full min-w-0 border-2 border-amber border-r-0 rounded-l pl-3 xl:pl-4 py-5 placeholder-gray' type="email" placeholder="Your email account">
+        <button class="bg-amber text-white text-base font-medium px-6 py-5 xl:px-7 rounded-r focus:outline-none focus:ring-amber">Subscribe</button>
       </div>
     </div>
   </section>

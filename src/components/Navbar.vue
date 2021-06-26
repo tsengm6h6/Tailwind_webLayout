@@ -8,16 +8,16 @@
       <!-- larger nav -->
       <ul class="hidden xl:flex text-gray text-xl space-x-8">
         <li v-for="nav in navList" :key="'nav'+ nav.id">
-          <button class="flex items-center">
+          <router-link :to="nav.link" class="flex items-center">
             <span class="material-icons">{{nav.icons}}</span>
             {{nav.title ==='Cart' ? nav.title + `(3)` : nav.title }}
-          </button>
+          </router-link>
         </li>
       </ul>
 
       <!-- mobile nav -->
       <div class="flex xl:hidden space-x-5">
-        <button class="relative">
+        <button class="relative focus:outline-none">
           <div  class="material-icons">
             shopping_cart
           </div>
@@ -28,11 +28,28 @@
       </div>
       <!-- mobile navlist -->
       <ul :class="`xl:hidden absolute inset-x-0 top-full transition duration-300 transform origin-top ${navOpen ? 'scale-y-100' : 'scale-y-0'}`">
-        <li class="w-full h-14 bg-secondGray-dark border-b-2 border-secondGray-light text-center text-white text-xl py-4">Product</li>
-        <li class="w-full h-14 bg-secondGray-dark border-b-2 border-secondGray-light text-center text-white text-xl py-4">Wishlist</li>
-        <li class="w-full h-14 bg-secondGray-dark border-b-2 border-secondGray-light text-center text-white text-xl py-4">Blog</li>
-        <li class="w-full h-14 bg-secondGray-dark border-b-2 border-secondGray-light text-center text-white text-xl py-4">Contact</li>
-        <li class="w-full h-14 bg-secondGray-dark text-center text-white text-xl py-4">Log in</li>
+        <li class="w-full h-14 bg-secondGray-dark border-b-2 border-secondGray-light text-center text-white text-xl py-4">
+          <router-link to='/products' @click="navOpen = false">Product</router-link>
+        </li>
+        <li class="w-full h-14 bg-secondGray-dark border-b-2 border-secondGray-light text-center text-white text-xl py-4">
+          <router-link to='/' @click="navOpen = false">
+            Wishlist
+          </router-link>
+        </li>
+        <li class="w-full h-14 bg-secondGray-dark border-b-2 border-secondGray-light text-center text-white text-xl py-4">
+          <router-link to='/' @click="navOpen = false">
+            Blog
+          </router-link>
+        </li>
+        <li class="w-full h-14 bg-secondGray-dark border-b-2 border-secondGray-light text-center text-white text-xl py-4">
+          <router-link to='/' @click="navOpen = false">
+            Contact
+          </router-link>
+        </li>
+        <li class="w-full h-14 bg-secondGray-dark text-center text-white text-xl py-4" >
+          <router-link v-if="!isLogin" to='/login'  @click="navOpen = false">Log in</router-link>
+          <router-link v-else to='/member'  @click="navOpen = false">Mypage</router-link>
+        </li>
       </ul>
     </div>  
   </nav>
@@ -43,16 +60,18 @@ import { reactive, ref } from '@vue/reactivity'
 export default {
   name: 'Navbar',
   setup(){
+    const isLogin = ref(true)
     const navOpen = ref(false)
     const navList = reactive([
-      { id: '1', title: 'Product', icons: 'store' },
-      { id: '2', title: 'Log in', icons: 'person' },
-      { id: '3', title: 'Wishlist', icons: 'favorite' },
-      { id: '4', title: 'Cart', icons: 'shopping_cart' }
+      { id: '1', title: 'Product', icons: 'store', link:'/products' },
+      { id: '2', title: 'Log in', icons: 'person', link:'/login' },
+      { id: '3', title: 'Wishlist', icons: 'favorite', link:'/products' },
+      { id: '4', title: 'Cart', icons: 'shopping_cart', link:'/products' }
     ])
     return {
       navOpen,
-      navList
+      navList,
+      isLogin
     }
   }
 }

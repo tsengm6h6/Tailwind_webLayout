@@ -19,8 +19,8 @@
           <div class="w-full flex justify-between items-center mt-4 xl:mt-6">
             <a class="text-amber-dark text-base font-medium" href="#">忘記密碼</a>
             <div class="flex justify-center items-center space-x-2">
-              <button class="py-2 px-4 rounded border border-amber-dark text-amber">註冊</button>
-              <button class="py-2 px-4 rounded bg-amber-dark text-white">登入</button>
+              <button class="py-2 px-4 rounded border border-amber-dark text-amber focus:outline-none focus:ring-amber focus:ring-1 hover:bg-amber-light hover:text-white transition duration-300 ease-in-out">註冊</button>
+              <button class="py-2 px-4 rounded bg-amber-dark text-white focus:outline-none focus:ring-1 hover:bg-amber-light transition duration-300 ease-in-out">登入</button>
             </div>
           </div>
         </div>
